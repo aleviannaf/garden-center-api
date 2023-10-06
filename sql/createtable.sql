@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS "products" (
+	"id" SERIAL PRIMARY KEY,
+	"name" VARCHAR(90) NOT NULL,
+	"description" VARCHAR(255) NOT NULL,
+	"price" INTEGER NOT NULL,
+	"type" VARCHAR(45) NOT NULL,
+	"image_url" VARCHAR(255) NOT NULL
+);
