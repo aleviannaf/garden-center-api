@@ -6,4 +6,10 @@ const listProduct = async (request: Request, response: Response):Promise<Respons
     return response.status(200).json(data)
 }
 
-export default { listProduct}
+const retrieveProduct = async (request: Request, response: Response):Promise<Response> =>{
+    const id = parseInt(request.params.id)
+    const product = await productService.retrieveProduct(id)
+    return response.status(200).json(product)
+}
+
+export default { listProduct, retrieveProduct}
