@@ -8,7 +8,7 @@ export default class Product {
     @Column({length: 90, unique: true})
     name: string
 
-    @Column({length:255})
+    @Column("text")
     description: string
 
     @Column({length: 45})
