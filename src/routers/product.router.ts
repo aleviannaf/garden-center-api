@@ -4,6 +4,11 @@ import middlewares from "../middlewares"
 
 const productRouter: Router = Router()
 
+productRouter.post(
+    '',
+    productController.createProduct
+)
+
 productRouter.get(
     '',
     productController.listProduct
