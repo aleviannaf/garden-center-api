@@ -3,6 +3,13 @@ import Product from "../entities/Product.entity";
 import { Repository } from "typeorm";
 import { AppError } from "../errors";
 
+const createProduct =  async (data:Omit<Product, 'id'>): Promise<Product> => {
+    const repo: Repository<Product> = AppDataSource.getRepository(Product);
+    const product = await repo.save(data);
+    return product;
+}
+
+
 const listProduct = async (): Promise<Product[]> => {
     const repo: Repository<Product> = AppDataSource.getRepository(Product);
     const products: Product[] = await repo.find();
@@ -20,4 +27,4 @@ const retrieveProduct = async(id:number): Promise<Product> =>{
     return product
 }
 
-export default { listProduct, retrieveProduct }
+export default { listProduct, retrieveProduct, createProduct }
