@@ -1,6 +1,8 @@
-import { IProduct, IProductList } from "./product"
+import { IProduct, IProductList } from "./product.interface"
+import { ICepData } from "./cep.interface"
 
 export {
     IProduct,
-    IProductList
+    IProductList,
+    ICepData
 }
