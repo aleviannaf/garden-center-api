@@ -19,4 +19,7 @@ export default class Product {
 
     @Column({length: 255})
     image_url: string
+
+    @Column({default: 0})
+    old_price:number
 }
